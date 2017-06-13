@@ -1,0 +1,44 @@
+/*plugins {
+  id 'org.springframework.boot' version '1.4.1.RELEASE'
+}*/
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+  }
+}
+
+//apply plugin: "org.springframework.boot" version '1.4.1.RELEASE'
+plugins {
+  id 'org.springframework.boot' version '1.5.4.RELEASE'
+}
+apply plugin: 'java'
+apply plugin: "idea"
+apply plugin: "application"
+
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web") {
+    exclude module: "spring-boot-starter-tomcat"
+  }
+
+  compile("org.springframework.boot:spring-boot-starter-actuator")
+  compile("org.springframework.boot:spring-boot-starter-jetty")
+}
+
+sourceCompatibility = 1.8
+
+group 'com.britishgas'
+version '0.0.1-SNAPSHOT'
+
+
+
+
+
+
